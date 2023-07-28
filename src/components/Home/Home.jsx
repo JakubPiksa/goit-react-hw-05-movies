@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 
 const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -30,7 +32,9 @@ const Home = () => {
       <h1>Najpopularniejsze filmy</h1>
       <ul>
         {trendingMovies.map((movie) => (
-          <li key={movie.id}>{movie.title}</li>
+          <li key={movie.id}>
+    <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
+  </li>
         ))}
       </ul>
       <p>Lubie filmy</p>
