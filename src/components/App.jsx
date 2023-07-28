@@ -1,11 +1,11 @@
 import React, { Suspense } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-const Home = React.lazy(() => import('./components/Home/Home'));
-const Movies = React.lazy(() => import('./components/Movies/Movies'));
-const MovieDetails = React.lazy(() => import('./components/MovieDetails/MovieDetails'));
-const Cast = React.lazy(() => import('./components/Cast/Cast'));
-const Reviews = React.lazy(() => import('./components/Reviews/Reviews'));
+const Home = React.lazy(() => import('./Home/Home'));
+const Movies = React.lazy(() => import('./Movies/Movies'));
+const MovieDetails = React.lazy(() => import('./MovieDetails/MovieDetails'));
+const Cast = React.lazy(() => import('./Cast/Cast'));
+const Reviews = React.lazy(() => import('./Reviews/Reviews'));
 
 const App = () => {
   return (
