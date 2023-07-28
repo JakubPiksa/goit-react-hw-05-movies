@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 
 const Home = React.lazy(() => import('./Home/Home'));
 const Movies = React.lazy(() => import('./Movies/Movies'));
@@ -11,7 +12,7 @@ const App = () => {
   return (
     <Router>
       <Suspense fallback={<div>Loading...</div>}>
-        <Switch>
+        
           <Route exact path="/" component={Home} />
           <Route exact path="/movies" component={Movies} />
           <Route exact path="/movies/:movieId" component={MovieDetails} />
@@ -19,7 +20,7 @@ const App = () => {
           <Route path="/movies/:movieId/reviews" component={Reviews} />
           {/* Dodaj trasę dla nieistniejących stron */}
           <Route component={Home} />
-        </Switch>
+        
       </Suspense>
     </Router>
   );
