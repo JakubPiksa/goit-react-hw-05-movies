@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/842.961127db.chunk.js","mappings":"0JAMA,UANa,WACT,OACI,uCAEP,C","sources":["components/Home/Home.jsx"],"sourcesContent":["const Home = () => {\n    return (\n        <p>I love react</p>\n    )\n}\n\nexport default Home"],"names":[],"sourceRoot":""}
