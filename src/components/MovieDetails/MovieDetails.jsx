@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
+import css from './movieDetails.module.css'
+
 
 const MovieDetails = () => {
   const { movieId } = useParams();
@@ -34,10 +36,12 @@ const MovieDetails = () => {
   const posterUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
 
   return (
-    <div>
-      <Link to={`/movies`}>Go Back</Link>
-      <h1>{movie.title}</h1>
-      <p>{movie.overview}</p>
+    <div className={css.movie_details_container}>
+      <button className={css.goBack_button}>
+        <Link to={`/movies`} >Go Back</Link>
+      </button>
+      <h1 className={css.movie_title}>{movie.title}</h1>
+      <p className={css.movie_overview}>{movie.overview}</p>
       {movie.poster_path ? (
         <img src={posterUrl} alt={movie.title} />
       ) : (

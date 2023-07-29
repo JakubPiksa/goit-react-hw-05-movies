@@ -1,3 +1,15 @@
+.movie_details_container {
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie_overview {
+  margin: 5% 10%;
+}
+
 .goBack_button {
   align-items: center;
   justify-content: center;

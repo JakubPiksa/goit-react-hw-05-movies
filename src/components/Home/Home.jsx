@@ -29,7 +29,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className={css.home_list_container}>
       <h1>Najpopularniejsze filmy</h1>
       <ul className={css.home_list}>
         {trendingMovies.map((movie) => (

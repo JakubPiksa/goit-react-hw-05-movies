@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import css from "./movies.module.css"
 
 const Movies = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -38,7 +39,7 @@ const Movies = () => {
   };
 
   return (
-    <div>
+    <div className={css.movies_container}>
       <h1>Movie Search</h1>
       <input
         type="text"
