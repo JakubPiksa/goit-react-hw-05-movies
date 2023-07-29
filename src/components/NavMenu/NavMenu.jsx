@@ -3,7 +3,7 @@ import css from './navMenu.module.css'
  
 const NavMenu = () => {
   return (
-    <div>
+    <div className={css.navigation_container}>
       <nav className="navigation">
         <NavLink to="/">
           <button className={css.homeBtn}>Home</button>

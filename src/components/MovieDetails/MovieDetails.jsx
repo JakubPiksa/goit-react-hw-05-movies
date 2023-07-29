@@ -31,15 +31,18 @@ const MovieDetails = () => {
     return <div>Loading...</div>;
   }
 
+  const posterUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+
   return (
     <div>
+      <Link to={`/movies`}>Go Back</Link>
       <h1>{movie.title}</h1>
-          <p>{movie.overview}</p>
-          <img
-
-          src={`https://image.tmdb.org/t/p/w500${movieId.poster}`}
-          alt={movieId.title}
-        />
+      <p>{movie.overview}</p>
+      {movie.poster_path ? (
+        <img src={posterUrl} alt={movie.title} />
+      ) : (
+        <div>No poster available</div>
+      )}
       <p>Release Date: {movie.release_date}</p>
       <p>Rating: {movie.vote_average}</p>
       <p>Genres: {movie.genres.map((genre) => genre.name).join(', ')}</p>

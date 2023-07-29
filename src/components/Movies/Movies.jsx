@@ -1,21 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-
 
 const Movies = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
 
-  useEffect(() => {
-    if (searchQuery) {
-      fetchMovies();
-    } else {
-      setSearchResults([]);
-    }
-  }, [searchQuery]);
-
-  const fetchMovies = async () => {
+  // Memoize the fetchMovies function
+  const fetchMovies = useCallback(async () => {
     try {
       const response = await axios.get(
         'https://api.themoviedb.org/3/search/movie',
@@ -31,7 +23,15 @@ const Movies = () => {
     } catch (error) {
       console.error('Error while fetching movies:', error);
     }
-  };
+  }, [searchQuery]); // Add searchQuery to the dependency array of useCallback
+
+  useEffect(() => {
+    if (searchQuery) {
+      fetchMovies();
+    } else {
+      setSearchResults([]);
+    }
+  }, [searchQuery, fetchMovies]); // Add fetchMovies to the dependency array of useEffect
 
   const handleSearch = (e) => {
     setSearchQuery(e.target.value);
@@ -48,9 +48,9 @@ const Movies = () => {
       />
       <ul>
         {searchResults.map((movie) => (
-           <li key={movie.id}>
-    <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
-  </li>
+          <li key={movie.id}>
+            <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
+          </li>
         ))}
       </ul>
     </div>
@@ -58,4 +58,3 @@ const Movies = () => {
 };
 
 export default Movies;
-

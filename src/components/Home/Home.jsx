@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import css from './home.module.css'
 
 
 const Home = () => {
@@ -20,7 +21,7 @@ const Home = () => {
 
         setTrendingMovies(response.data.results);
       } catch (error) {
-        console.error('Błąd podczas pobierania:', error);
+        console.error('Error while fetching trending movies:', error);
       }
     };
 
@@ -30,14 +31,19 @@ const Home = () => {
   return (
     <div>
       <h1>Najpopularniejsze filmy</h1>
-      <ul>
+      <ul className={css.home_list}>
         {trendingMovies.map((movie) => (
-          <li key={movie.id}>
-    <Link to={`/movies/${movie.id}`}>{movie.title}</Link>
-  </li>
+          <li key={movie.id} className={css.home_list_item}>
+            <Link to={`/movies/${movie.id}`}>
+              <img
+                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                alt={movie.title}
+              />
+              <p>{movie.title}</p>
+            </Link>
+          </li>
         ))}
       </ul>
-      <p>Lubie filmy</p>
     </div>
   );
 };
