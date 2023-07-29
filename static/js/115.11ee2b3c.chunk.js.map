@@ -1,1 +1,0 @@
-{"version":3,"file":"static/js/115.11ee2b3c.chunk.js","mappings":"0JAMA,UANe,WACX,OACI,uCAEP,C","sources":["components/Movies/Movies.jsx"],"sourcesContent":["const Movies = () => {\n    return (\n        <p>I love react</p>\n    )\n}\n\nexport default Movies "],"names":[],"sourceRoot":""}
