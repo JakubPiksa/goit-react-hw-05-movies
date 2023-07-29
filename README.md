@@ -1,1 +1,1 @@
-# https://jakubpiksa.github.io//
+# https://jakubpiksa.github.io/goit-react-hw-05-movies/
