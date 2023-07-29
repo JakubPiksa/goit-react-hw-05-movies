@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useParams, Link } from 'react-router-dom';
 import css from './cast.module.css'
 
-
+const noPhoto = '/images/No-image-found.jpg';
 
 const Cast = () => {
   const { movieId } = useParams();
@@ -48,7 +48,7 @@ const Cast = () => {
                   alt={actor.name}
                 />
               ) : (
-                <img width="150px" src={C:\Users\Admin\Documents\GitHub\goit-react-hw-05-movies\src\components\Cast\No-image-found.jpg} alt="No Photo" />
+                <img width="150px" height="220px" src={noPhoto} alt="NO_PHOTO_FOUND" />
               )}
               <span>{actor.name}</span>
             </li>
@@ -60,5 +60,6 @@ const Cast = () => {
     </div>
   );
 };
+
 
 export default Cast;
