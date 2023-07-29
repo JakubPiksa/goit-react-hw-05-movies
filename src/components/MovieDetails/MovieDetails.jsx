@@ -51,8 +51,12 @@ const MovieDetails = () => {
       <p>Rating: {movie.vote_average}</p>
       <p>Genres: {movie.genres.map((genre) => genre.name).join(', ')}</p>
       <p>Runtime: {movie.runtime} minutes</p>
-      <Link to={`/movies/${movieId}/cast`}>View Cast</Link>
-      <Link to={`/movies/${movieId}/reviews`}>View Reviews</Link>
+      <button className={css.goBack_button}>
+        <Link to={`/movies/${movieId}/cast`}>View Cast</Link>
+      </button>
+      <button className={css.goBack_button}>
+        <Link to={`/movies/${movieId}/reviews`}>View Reviews</Link>
+      </button>
     </div>
   );
 };

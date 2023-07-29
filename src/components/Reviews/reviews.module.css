@@ -15,3 +15,30 @@
   background-color: #a5d3f8;
   margin: 20px;
 }
+
+.goBack_button:hover {
+  box-shadow: 0 0 #fff;
+  transform: translateY(1px);
+}
+
+.reviews_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.reviews {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.reviews h3 {
+  text-align: center;
+}
+
+.reviews p {
+  margin: 2% 5%;
+}
