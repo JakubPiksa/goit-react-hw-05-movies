@@ -30,9 +30,9 @@ const Reviews = () => {
 
   return (
       <div className={css.reviews_container}>
-          <button className={css.goBack_button}>
-            <Link to={`/movies/${movieId}`} >Go Back</Link>
-        </button>
+      <Link to={`/movies/${movieId}`} >
+        <button className={css.goBack_button}>Go Back</button>
+      </Link>
       {reviews.length > 0 ? (
         <ul className={css.reviews}>
           {reviews.map(review => (

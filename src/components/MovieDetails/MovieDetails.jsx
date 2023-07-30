@@ -37,9 +37,9 @@ const MovieDetails = () => {
 
   return (
     <div className={css.movie_details_container}>
-      <button className={css.goBack_button}>
-        <Link to={`/movies`} >Go Back</Link>
-      </button>
+      <Link to={`/movies`} >
+        <button className={css.goBack_button}>Go Back</button>
+      </Link>
       <h1 className={css.movie_title}>{movie.title}</h1>
       <p className={css.movie_overview}>{movie.overview}</p>
       {movie.poster_path ? (
@@ -51,12 +51,12 @@ const MovieDetails = () => {
       <p>Rating: {movie.vote_average}</p>
       <p>Genres: {movie.genres.map((genre) => genre.name).join(', ')}</p>
       <p>Runtime: {movie.runtime} minutes</p>
-      <button className={css.goBack_button}>
-        <Link to={`/movies/${movieId}/cast`}>View Cast</Link>
-      </button>
-      <button className={css.goBack_button}>
-        <Link to={`/movies/${movieId}/reviews`}>View Reviews</Link>
-      </button>
+      <Link to={`/movies/${movieId}/cast`} >
+        <button className={css.goBack_button}>Cast</button>
+      </Link>
+      <Link to={`/movies/${movieId}/reviews`} >
+        <button className={css.goBack_button}>Revievs</button>
+      </Link>
     </div>
   );
 };

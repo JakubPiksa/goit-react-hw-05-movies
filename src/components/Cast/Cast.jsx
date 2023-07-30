@@ -32,9 +32,9 @@ const Cast = () => {
 
   return (
     <div className={css.cast_container}>
-      <button className={css.goBack_button}>
-        <Link to={`/movies/${movieId}`} >Go Back</Link>
-      </button>
+      <Link to={`/movies/${movieId}`} >
+        <button className={css.goBack_button}>Go Back</button>
+      </Link>
       <h2>Cast</h2>
       
       {cast.length > 0 ? (
