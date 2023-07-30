@@ -16,7 +16,7 @@ const App = () => {
       <NavMenu />
       
     <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
+        <Routes >
           <Route exact path="/" element={<Home />} />
           <Route exact path="/movies" element={<Movies />} />
           <Route exact path="/movies/:movieId" element={<MovieDetails />} />
